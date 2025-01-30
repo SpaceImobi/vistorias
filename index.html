@@ -14,7 +14,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="$FLUTTER_BASE_HREF">
+  <base href="/vistorias/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -38,38 +38,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
   <script>
-    // Definir serviceWorkerVersion se não estiver definido
-    var serviceWorkerVersion = null;
-    
-    // Detectar base path
-    var baseHref = document.querySelector('base').getAttribute('href');
-    
-    // Configurar variáveis globais para o Flutter Web
-    window.flutterWebRenderer = "canvaskit";
-    window.assetBase = baseHref;
-    
-    window.addEventListener('load', function() {
-      _flutter.loader.load({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: async function(engineInitializer) {
-          let config = {
-            renderer: 'canvaskit',
-            canvasKitBaseUrl: window.assetBase + "canvaskit/",
-            canvasKitVariant: "full",
-          };
-          
-          try {
-            const appRunner = await engineInitializer.initializeEngine(config);
-            await appRunner.runApp();
-          } catch (e) {
-            console.error('Erro ao inicializar Flutter:', e);
-          }
-        }
-      });
-    });
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "{{flutter_service_worker_version}}";
   </script>
+
+  <!-- Carregamento do Flutter -->
+  <script src="/vistorias/flutter.js" defer></script>
 
   <style>
     /* Fallback enquanto a fonte carrega */
@@ -90,9 +64,108 @@
       -moz-osx-font-smoothing: grayscale;
       font-feature-settings: 'liga';
     }
+
+    /* Estilo para tela de carregamento */
+    .loading {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #2f503d;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .loading img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .loading p {
+      margin-top: 16px;
+      font-size: 16px;
+    }
+
+    .loading-error {
+      color: #ff6b6b;
+      text-align: center;
+      max-width: 80%;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+
+    .loading-error button {
+      margin-top: 16px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background: #ff6b6b;
+      color: white;
+      cursor: pointer;
+    }
+
+    .loading-error pre {
+      max-width: 100%;
+      overflow-x: auto;
+      background: rgba(0,0,0,0.2);
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
   </style>
+
+  <!-- Adicionar após as meta tags existentes -->
+  <meta name="theme-color" content="#2f503d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Adicionar preload do flutter.js -->
+  <link rel="preload" href="/vistorias/flutter.js" as="script">
 </head>
 <body>
-  <script src="flutter.js" defer></script>
+  <div class="loading">
+    <img src="icons/Icon-192.png" alt="Loading">
+    <p>Carregando...</p>
+  </div>
+
+  <script>
+    window.addEventListener('load', function(ev) {
+      var loading = document.querySelector('.loading');
+      var loadingText = loading.querySelector('p');
+      
+      // Download main.dart.js
+      if (!_flutter) {
+        loadingText.textContent = 'Erro: Flutter não encontrado';
+        return;
+      }
+
+      _flutter.loader.load({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: async function(engineInitializer) {
+          loadingText.textContent = 'Inicializando...';
+          let appRunner = await engineInitializer.initializeEngine({
+            useColorEmoji: true,
+            renderer: "canvaskit"
+          });
+
+          loadingText.textContent = 'Iniciando aplicativo...';
+          await appRunner.runApp();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+

@@ -1,0 +1,119 @@
+{
+  "appName": "Vistorias - Space Imobi",
+  "appId": "default",
+  "logo": "assets/images/splash.png",
+  "assets": {
+    "logo": "assets/images/splash.png",
+    "logoLight": "assets/images/splash.png",
+    "logoDark": "assets/images/splash.png"
+  },
+  "config": {
+    "features": {
+      "darkMode": true,
+      "customFonts": true,
+      "multiLanguage": false
+    },
+    "app": {
+      "name": "Space Imobi Vistorias",
+      "logo": "assets/images/splash.png",
+      "primaryColor": "#3F51B5"
+    }
+  },
+  "theme": {
+    "tokens": {
+      "typography": {
+        "fontFamily": {
+          "heading": "Noto Sans",
+          "body": "Noto Sans"
+        },
+        "scale": {
+          "displayLarge": {
+            "family": "Noto Sans",
+            "size": 57,
+            "weight": 700,
+            "letterSpacing": -0.25,
+            "lineHeight": 1.12
+          },
+          "displayMedium": {
+            "family": "Noto Sans",
+            "size": 45,
+            "weight": 700,
+            "letterSpacing": -0.25,
+            "lineHeight": 1.16
+          },
+          "displaySmall": {
+            "family": "Noto Sans",
+            "size": 36,
+            "weight": 700,
+            "letterSpacing": -0.25,
+            "lineHeight": 1.22
+          },
+          "headlineLarge": {
+            "family": "Noto Sans",
+            "size": 32,
+            "weight": 700,
+            "letterSpacing": -0.25,
+            "lineHeight": 1.25
+          },
+          "headlineMedium": {
+            "family": "Noto Sans",
+            "size": 28,
+            "weight": 600,
+            "letterSpacing": -0.25,
+            "lineHeight": 1.29
+          },
+          "headlineSmall": {
+            "family": "Noto Sans",
+            "size": 24,
+            "weight": 600,
+            "letterSpacing": -0.25,
+            "lineHeight": 1.33
+          },
+          "titleLarge": {
+            "family": "Noto Sans",
+            "size": 22,
+            "weight": 600,
+            "letterSpacing": 0,
+            "lineHeight": 1.27
+          },
+          "titleMedium": {
+            "family": "Noto Sans",
+            "size": 16,
+            "weight": 600,
+            "letterSpacing": 0.15,
+            "lineHeight": 1.5
+          },
+          "titleSmall": {
+            "family": "Noto Sans",
+            "size": 14,
+            "weight": 600,
+            "letterSpacing": 0.1,
+            "lineHeight": 1.43
+          }
+        }
+      },
+      "colors": {
+        "light": {
+          "primary": "#3F51B5",
+          "onPrimary": "#FFFFFF",
+          "primaryContainer": "#5C6BC0",
+          "onPrimaryContainer": "#FFFFFF",
+          "secondary": "#7986CB",
+          "onSecondary": "#FFFFFF",
+          "secondaryContainer": "#9FA8DA",
+          "onSecondaryContainer": "#1A237E"
+        },
+        "dark": {
+          "primary": "#9FA8DA",
+          "onPrimary": "#1A237E",
+          "primaryContainer": "#5C6BC0",
+          "onPrimaryContainer": "#E8EAF6",
+          "secondary": "#7986CB",
+          "onSecondary": "#1A237E",
+          "secondaryContainer": "#3F51B5",
+          "onSecondaryContainer": "#E8EAF6"
+        }
+      }
+    }
+  }
+}
