@@ -108140,7 +108140,7 @@ e=h.h(i,"changeLog")
 A.rs(h.h(i,"releaseDate"))
 i=h.h(i,"isRequired")
 k=new A.BG(g,f,e,i==null?!1:i)
-s=n.aka("0.1.29",k.a)?13:15
+s=n.aka("0.1.30",k.a)?13:15
 break
 case 13:A.y().$1("\u2728 Nova vers\xe3o dispon\xedvel: "+k.a)
 s=16
@@ -108236,7 +108236,7 @@ f=$.l().gI()
 p=A.w(a).p2.y
 f=A.d7(A.aTd(A.a([B.amO,B.amM,B.amQ,B.amN,B.amP,A.ik(!1,i,i,i,!0,i,i,!1,B.Un,i,i,new A.acL(a),!1,i,i,i,i,i,A.a9("Sair",i,i,i,i,p==null?i:p.tP(B.k,$.l().bz(16),B.eR),i,i),i,i,i)],j),new A.X(8*f,48*r,0,0),B.NH),1)
 r=16*$.l().gI()
-return new A.QN(e,A.kQ(!0,A.fd(B.aV,A.a([d,c,A.b0(A.a([s,f,new A.bc(new A.X(r,r,r,r),A.a9("v0.1.29 (27)",i,i,i,i,k?i:n.bj(A.A(B.d.W(127.5),255,255,255)),i,i),i)],j),B.n,B.l,B.o)],j),B.q,B.b7,i),B.a6,!0),i)}}
+return new A.QN(e,A.kQ(!0,A.fd(B.aV,A.a([d,c,A.b0(A.a([s,f,new A.bc(new A.X(r,r,r,r),A.a9("v0.1.30 (28)",i,i,i,i,k?i:n.bj(A.A(B.d.W(127.5),255,255,255)),i,i),i)],j),B.n,B.l,B.o)],j),B.q,B.b7,i),B.a6,!0),i)}}
 A.acL.prototype={
 $0(){var s=0,r=A.v(t.H),q,p=2,o,n=this,m,l,k,j,i
 var $async$$0=A.q(function(a,b){if(a===1){o=b

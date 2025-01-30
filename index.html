@@ -39,11 +39,11 @@
   
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "{{flutter_service_worker_version}}";
+    const serviceWorkerVersion = "318002632";
   </script>
 
   <!-- Carregamento do Flutter -->
-  <script src="/vistorias/flutter.js" defer></script>
+  <script src="flutter.js" defer></script>
 
   <style>
     /* Fallback enquanto a fonte carrega */
@@ -130,7 +130,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Adicionar preload do flutter.js -->
-  <link rel="preload" href="/vistorias/flutter.js" as="script">
+  <link rel="preload" href="/flutter.js" as="script">
 </head>
 <body>
   <div class="loading">
@@ -149,7 +149,7 @@
         return;
       }
 
-      _flutter.loader.load({
+      _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
