@@ -1,7 +1,7 @@
 {
     "name": "Space Imobi Vistorias",
     "short_name": "Vistorias",
-    "version": "0.1.35",
+    "version": "0.1.36",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#2f503d",
