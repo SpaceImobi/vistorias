@@ -39,11 +39,33 @@
   
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1229739746";
+    const serviceWorkerVersion = "221469025";
+    var scriptLoaded = false;
+    function loadMainDartJs() {
+      if (scriptLoaded) {
+        return;
+      }
+      scriptLoaded = true;
+      var scriptTag = document.createElement('script');
+      scriptTag.src = 'main.dart.js';
+      scriptTag.type = 'application/javascript';
+      document.body.append(scriptTag);
+    }
+
+    // Carrega o flutter.js com o caminho correto
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        var baseHref = document.querySelector('base').getAttribute('href') || '/';
+        var scriptTag = document.createElement('script');
+        scriptTag.src = baseHref + 'flutter.js';
+        scriptTag.defer = true;
+        document.body.appendChild(scriptTag);
+      });
+    }
   </script>
 
   <!-- Carregamento do Flutter -->
-  <script src="flutter.js" defer></script>
+  <script src="/vistorias/flutter.js" defer></script>
 
   <style>
     /* Fallback enquanto a fonte carrega */
