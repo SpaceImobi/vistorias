@@ -44,7 +44,7 @@
       : '/vistorias/';
     
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "2326776303";
+    const serviceWorkerVersion = "1944974997";
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -60,10 +60,14 @@
     // Carrega o flutter.js com o caminho correto
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        var baseHref = window.flutterBasePath;
+        // Usar path completo baseado no location
+        var scriptPath = window.location.pathname.startsWith('/vistorias') 
+          ? '/vistorias/flutter.js' 
+          : '/flutter.js';
+        
         var scriptTag = document.createElement('script');
-        scriptTag.src = baseHref + 'flutter.js';
-        scriptTag.defer = true;
+        scriptTag.src = scriptPath;
+        scriptTag.type = 'application/javascript';
         document.body.appendChild(scriptTag);
       });
     }
@@ -74,9 +78,6 @@
         ? '/vistorias/' 
         : '/';
   </script>
-
-  <!-- Carregamento do Flutter -->
-  <script src="/vistorias/flutter.js" defer></script>
 
   <style>
     /* Fallback enquanto a fonte carrega */
@@ -161,9 +162,6 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-
-  <!-- Adicionar preload do flutter.js -->
-  <link rel="preload" href="/flutter.js" as="script">
 </head>
 <body>
   <div class="loading">
