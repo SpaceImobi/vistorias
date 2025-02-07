@@ -38,8 +38,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
   <script>
+    // Detecta se está em produção e ajusta o base path
+    window.flutterBasePath = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') 
+      ? '/' 
+      : '/vistorias/';
+    
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1597160356";
+    const serviceWorkerVersion = "4177270542";
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -55,13 +60,19 @@
     // Carrega o flutter.js com o caminho correto
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        var baseHref = document.querySelector('base').getAttribute('href') || '/';
+        var baseHref = window.flutterBasePath;
         var scriptTag = document.createElement('script');
         scriptTag.src = baseHref + 'flutter.js';
         scriptTag.defer = true;
         document.body.appendChild(scriptTag);
       });
     }
+
+    // Adicionar fallback para base href
+    document.querySelector('base').href = 
+      window.location.pathname.startsWith('/vistorias') 
+        ? '/vistorias/' 
+        : '/';
   </script>
 
   <!-- Carregamento do Flutter -->
