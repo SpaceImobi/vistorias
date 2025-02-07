@@ -108463,7 +108463,7 @@ g.h(h,"build_number")
 g.h(h,"environment")
 h=g.h(h,"force_update")
 j=new A.Bw(f,e,d,h==null?!1:h)
-s=n.aka("1.0.21",j.a)?14:16
+s=n.aka("1.0.22",j.a)?14:16
 break
 case 14:A.y().$1("\u2728 Nova vers\xe3o dispon\xedvel: "+j.a)
 s=17
@@ -108579,7 +108579,7 @@ f=$.l().gJ()
 p=A.x(a).p2.y
 f=A.d4(A.aT7(A.a([B.amY,B.amW,B.an_,B.amX,B.amZ,A.ii(!1,i,i,i,!0,i,i,!1,B.Uy,i,i,new A.acJ(a),!1,i,i,i,i,i,A.a9("Sair",i,i,i,i,p==null?i:p.tS(B.j,$.l().bt(16),B.eS),i,i),i,i,i)],j),new A.Y(8*f,48*r,0,0),B.NR),1)
 r=16*$.l().gJ()
-return new A.QG(e,A.kO(!0,A.fb(B.aV,A.a([d,new A.Pt(c,i),A.b4(A.a([s,f,new A.bb(new A.Y(r,r,r,r),A.a9("v1.0.21 (5)",i,i,i,i,k?i:n.bl(A.C(B.d.W(127.5),255,255,255)),i,i),i)],j),B.n,B.l,B.o)],j),B.q,B.b7,i),B.a1,!0),i)}}
+return new A.QG(e,A.kO(!0,A.fb(B.aV,A.a([d,new A.Pt(c,i),A.b4(A.a([s,f,new A.bb(new A.Y(r,r,r,r),A.a9("v1.0.22 (6)",i,i,i,i,k?i:n.bl(A.C(B.d.W(127.5),255,255,255)),i,i),i)],j),B.n,B.l,B.o)],j),B.q,B.b7,i),B.a1,!0),i)}}
 A.acJ.prototype={
 $0(){var s=0,r=A.v(t.H),q,p=2,o,n=this,m,l,k,j,i
 var $async$$0=A.q(function(a,b){if(a===1){o=b
